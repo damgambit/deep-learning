@@ -87,6 +87,7 @@ def test_get_batches(get_batches):
             'Batches returned wrong shape.  Found {}'.format(batches.shape)
 
         for x in range(batches.shape[2]):
+            print(x)
             assert np.array_equal(batches[0,0,x], np.array(range(x * 35, x * 35 + batches.shape[3]))),\
                 'Batches returned wrong contents. For example, input sequence {} in the first batch was {}'.format(x, batches[0,0,x])
             assert np.array_equal(batches[0,1,x], np.array(range(x * 35 + 1, x * 35 + 1 + batches.shape[3]))),\
